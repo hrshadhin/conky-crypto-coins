@@ -65,18 +65,18 @@ color2="FFFFFF",
 conky.text = [[
 \
 \
-${execi 300  curl -s "https://api.coinmarketcap.com/v1/ticker/" -o ~/bin/conky/crypto_coins/rates.json}\
+${execi 300  curl -s "https://api.coinmarketcap.com/v1/ticker/" -o ~/conky-crypto-coins/rates.json}\
 \
 \
 \
 \
-${image ~/bin/conky/crypto_coins/images/top-bg.png -p 20,25 -s 228x150}\
-${image ~/bin/conky/crypto_coins/images/bottom-bg.png -p 20,175 -s 228x150}\
-${image ~/bin/conky/crypto_coins/images/border.png -p 20,25 -s 228x265}\
-${image ~/bin/conky/crypto_coins/images/separator-v.png -p 95,50 -s 1x83}\
-${image ~/bin/conky/crypto_coins/images/separator-v.png -p 172,50 -s 1x83}\
-${image ~/bin/conky/crypto_coins/images/separator-v.png -p 95,180 -s 1x83}\
-${image ~/bin/conky/crypto_coins/images/separator-v.png -p 172,180 -s 1x83}\
+${image ~/conky-crypto-coins/images/top-bg.png -p 20,25 -s 228x150}\
+${image ~/conky-crypto-coins/images/bottom-bg.png -p 20,175 -s 228x150}\
+${image ~/conky-crypto-coinss/images/border.png -p 20,25 -s 228x265}\
+${image ~/conky-crypto-coins/images/separator-v.png -p 95,50 -s 1x83}\
+${image ~/conky-crypto-coins/images/separator-v.png -p 172,50 -s 1x83}\
+${image ~/conky-crypto-coins/images/separator-v.png -p 95,180 -s 1x83}\
+${image ~/conky-crypto-coins/images/separator-v.png -p 172,180 -s 1x83}\
 \
 \
 \
@@ -88,12 +88,12 @@ ${color2}${voffset -15}${alignc -77}LTC
 \
 \
 \
-${color2}${voffset 53}${alignc 77}${execi 0 cat ~/bin/conky/crypto_coins/rates.json | jq -r '.[0] | .price_usd' | awk '{print "$"$1}'}
-${color2}${voffset -15}${alignc}${execi 0 cat ~/bin/conky/crypto_coins/rates.json | jq -r '.[1] | .price_usd' | awk '{print "$"$1}'}
-${color2}${voffset -15}${alignc -77}${execi 0 cat ~/bin/conky/crypto_coins/rates.json | jq -r '.[6] | .price_usd' | awk '{print "$"$1}'}
-${image ~/bin/conky/crypto_coins/images/btc.png -p 42,75 -s 32x32}\
-${image ~/bin/conky/crypto_coins/images/eth.png -p 118,75 -s 32x32}\
-${image ~/bin/conky/crypto_coins/images/ltc.png -p 194,75 -s 32x32}${font}\
+${color2}${voffset 53}${alignc 77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[0] | .price_usd' | awk '{print "$"$1}'}
+${color2}${voffset -15}${alignc}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[1] | .price_usd' | awk '{print "$"$1}'}
+${color2}${voffset -15}${alignc -77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[6] | .price_usd' | awk '{print "$"$1}'}
+${image ~/conky-crypto-coins/images/btc.png -p 42,75 -s 32x32}\
+${image ~/conky-crypto-coins/images/eth.png -p 118,75 -s 32x32}\
+${image ~/conky-crypto-coins/images/ltc.png -p 194,75 -s 32x32}${font}\
 \
 \
 \
@@ -105,10 +105,10 @@ ${color2}${voffset -15}${alignc -77}DASH
 \
 \
 \
-${color2}${voffset 53}${alignc 77}${execi 0 cat ~/bin/conky/crypto_coins/rates.json | jq -r '.[12] | .price_usd' | awk '{print "$"$1}'}
-${color2}${voffset -15}${alignc}${execi 0 cat ~/bin/conky/crypto_coins/rates.json | jq -r '.[3] | .price_usd' | awk '{print "$"$1}'}
-${color2}${voffset -15}${alignc -77}${execi 0 cat ~/bin/conky/crypto_coins/rates.json | jq -r '.[10] | .price_usd' | awk '{print "$"$1}'}
-${image ~/bin/conky/crypto_coins/images/xmr.png -p 42,210 -s 32x32}\
-${image ~/bin/conky/crypto_coins/images/bch.png -p 118,210 -s 32x32}\
-${image ~/bin/conky/crypto_coins/images/dash.png -p 194,210 -s 32x32}${font}\
+${color2}${voffset 53}${alignc 77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[12] | .price_usd' | awk '{print "$"$1}'}
+${color2}${voffset -15}${alignc}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[3] | .price_usd' | awk '{print "$"$1}'}
+${color2}${voffset -15}${alignc -77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[10] | .price_usd' | awk '{print "$"$1}'}
+${image ~/conky-crypto-coins/images/xmr.png -p 42,210 -s 32x32}\
+${image ~/conky-crypto-coins/images/bch.png -p 118,210 -s 32x32}\
+${image ~/conky-crypto-coins/images/dash.png -p 194,210 -s 32x32}${font}\
 ]]
