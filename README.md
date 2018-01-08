@@ -1,18 +1,17 @@
-ConkySlot
-=========
+ConkyCryptoCoins
+================
 
-A Conky theme that modify from conky seamod
+A Conky widget for monitoring crypto currencies.
 
-USAGE:
-=======
-After download it place the folder to home directory.And paste fonts into ~/.fonts folder.Then Run the ConkyStart.sh file.Enjoy:D
+### Installation:
 
-Dependency for HDD,CPU temperature install those packages: hdd-temp,lm-sensors,dmidecode
+* Install **conky**, **curl** and **jq**.
 
-Helpfull links:
-<a href="http://hrshadhin.wordpress.com/2014/01/03/install-conky-conky-theme-seamod-mix-on-linux/">Help</a>
+* Make sure you have the **Droid Sans** font installed.
 
-Screenshot:
-==========
+* After download it place the folder to home directory.Then Run the ConkyStart.sh file.Enjoy:D
+
+
+### Screenshot:
+
 <img src="p1.png">
-<img src="p2.png">
