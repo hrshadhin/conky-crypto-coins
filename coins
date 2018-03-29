@@ -88,9 +88,9 @@ ${color2}${voffset -15}${alignc -77}LTC
 \
 \
 \
-${color2}${voffset 53}${alignc 77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[0] | .price_usd' | awk '{print "$"$1}'}
-${color2}${voffset -15}${alignc}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[1] | .price_usd' | awk '{print "$"$1}'}
-${color2}${voffset -15}${alignc -77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[6] | .price_usd' | awk '{print "$"$1}'}
+${color2}${voffset 53}${alignc 77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "BTC") | .price_usd'}
+${color2}${voffset -15}${alignc}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "ETH") | .price_usd'}
+${color2}${voffset -15}${alignc -77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "LTC") | .price_usd'}
 ${image ~/conky-crypto-coins/images/btc.png -p 42,75 -s 32x32}\
 ${image ~/conky-crypto-coins/images/eth.png -p 118,75 -s 32x32}\
 ${image ~/conky-crypto-coins/images/ltc.png -p 194,75 -s 32x32}${font}\
@@ -105,9 +105,9 @@ ${color2}${voffset -15}${alignc -77}DASH
 \
 \
 \
-${color2}${voffset 53}${alignc 77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[12] | .price_usd' | awk '{print "$"$1}'}
-${color2}${voffset -15}${alignc}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[3] | .price_usd' | awk '{print "$"$1}'}
-${color2}${voffset -15}${alignc -77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[10] | .price_usd' | awk '{print "$"$1}'}
+${color2}${voffset 53}${alignc 77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "XMR") | .price_usd'}
+${color2}${voffset -15}${alignc}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "BCH") | .price_usd'}
+${color2}${voffset -15}${alignc -77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "DASH") | .price_usd'}
 ${image ~/conky-crypto-coins/images/xmr.png -p 42,210 -s 32x32}\
 ${image ~/conky-crypto-coins/images/bch.png -p 118,210 -s 32x32}\
 ${image ~/conky-crypto-coins/images/dash.png -p 194,210 -s 32x32}${font}\
