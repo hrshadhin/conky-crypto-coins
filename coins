@@ -3,7 +3,7 @@ conky.config = {
 -------------------------------------
 --  Generic Settings
 -------------------------------------
-background=true,
+background=false,
 update_interval=1,
 double_buffer=true,
 no_buffers=true,
@@ -21,14 +21,17 @@ show_graph_range=false,
 
 -------------------------------------
 --  Window Specifications
--------------------------------------
-gap_x=1100,
-gap_y=450,
-minimum_height=290,
-minimum_width=268,
+-----------------------------------
+gap_x=1450,
+gap_y=940,
+minimum_height=145,
+minimum_width=636,
 own_window=true,
 own_window_type="normal",
 own_window_transparent=true,
+own_window_transparent=true,
+own_window_argb_visual=true,
+own_window_argb_value=50,
 own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
 border_inner_margin=0,
 border_outer_margin=0,
@@ -70,45 +73,38 @@ ${execi 300  curl -s "https://api.coinmarketcap.com/v1/ticker/" -o ~/conky-crypt
 \
 \
 \
-${image ~/conky-crypto-coins/images/top-bg.png -p 20,25 -s 228x150}\
-${image ~/conky-crypto-coins/images/bottom-bg.png -p 20,175 -s 228x150}\
-${image ~/conky-crypto-coinss/images/border.png -p 20,25 -s 228x265}\
-${image ~/conky-crypto-coins/images/separator-v.png -p 95,50 -s 1x83}\
-${image ~/conky-crypto-coins/images/separator-v.png -p 172,50 -s 1x83}\
-${image ~/conky-crypto-coins/images/separator-v.png -p 95,180 -s 1x83}\
-${image ~/conky-crypto-coins/images/separator-v.png -p 172,180 -s 1x83}\
 \
 \
 \
 \
-${color2}${voffset 50}${alignc 77}BTC
-${color2}${voffset -15}${alignc}ETH
-${color2}${voffset -15}${alignc -77}LTC
+${color2}${voffset 50}${alignc 260}BTC
+${color2}${voffset -17}${alignc 184}EOS
+${color2}${voffset -17}${alignc 108}ETH
+${color2}${voffset -17}${alignc 32}XMR
+${color2}${voffset -17}${alignc -44}LTC
+${color2}${voffset -17}${alignc -120}DASH
 \
 \
 \
 \
-${color2}${voffset 53}${alignc 77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "BTC") | .price_usd' | awk '{print "$"$1}'}
-${color2}${voffset -15}${alignc}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "ETH") | .price_usd' | awk '{print "$"$1}'}
-${color2}${voffset -15}${alignc -77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "LTC") | .price_usd' | awk '{print "$"$1}'}
+${color2}${voffset 53}${alignc 260}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "BTC") | .price_usd' | awk '{print "$"$1}'}
+${color2}${voffset -17}${alignc 184}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "EOS") | .price_usd' | awk '{print "$"$1}'}
+${color2}${voffset -17}${alignc 108}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "ETH") | .price_usd' | awk '{print "$"$1}'}
 ${image ~/conky-crypto-coins/images/btc.png -p 42,75 -s 32x32}\
-${image ~/conky-crypto-coins/images/eth.png -p 118,75 -s 32x32}\
-${image ~/conky-crypto-coins/images/ltc.png -p 194,75 -s 32x32}${font}\
+${image ~/conky-crypto-coins/images/eos.png -p 118,75 -s 32x32}\
+${image ~/conky-crypto-coins/images/eth.png -p 194,75 -s 32x32}${font}\
 \
 \
 \
 \
-${color2}${voffset 50}${alignc 77}XMR
-${color2}${voffset -15}${alignc}BCH
-${color2}${voffset -15}${alignc -77}DASH
 \
 \
 \
 \
-${color2}${voffset 53}${alignc 77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "XMR") | .price_usd' | awk '{print "$"$1}'}
-${color2}${voffset -15}${alignc}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "BCH") | .price_usd' | awk '{print "$"$1}'}
-${color2}${voffset -15}${alignc -77}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "DASH") | .price_usd' | awk '{print "$"$1}'}
-${image ~/conky-crypto-coins/images/xmr.png -p 42,210 -s 32x32}\
-${image ~/conky-crypto-coins/images/bch.png -p 118,210 -s 32x32}\
-${image ~/conky-crypto-coins/images/dash.png -p 194,210 -s 32x32}${font}\
+${color2}${voffset -17}${alignc 32}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "XMR") | .price_usd' | awk '{print "$"$1}'}
+${color2}${voffset -17}${alignc -44}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "LTC") | .price_usd' | awk '{print "$"$1}'}
+${color2}${voffset -17}${alignc -120}${execi 0 cat ~/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "DASH") | .price_usd' | awk '{print "$"$1}'}
+${image ~/conky-crypto-coins/images/xmr.png -p 270,75 -s 32x32}\
+${image ~/conky-crypto-coins/images/ltc.png -p 346,75 -s 32x32}\
+${image ~/conky-crypto-coins/images/dash.png -p 422,75 -s 32x32}${font}\
 ]]
